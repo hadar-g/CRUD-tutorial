@@ -2,6 +2,7 @@ import React from 'react'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import './CreatePost.css'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 function CreatePost() {
     const initialValues = {
@@ -16,7 +17,9 @@ function CreatePost() {
         username: Yup.string().min(3).max(15).required(),
     })
     const onSubmit = (data) => {
-        console.log(data)
+        axios.post("http://localhost:3001/posts", data).then((response) => {
+        console.log("it worked")
+    })
     }
     //initialValues={} onSubmit={} validationSchema={}
     return (
