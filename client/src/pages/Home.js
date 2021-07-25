@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import './Home.css'
+import axios from 'axios'
 
 function Home() {
     
@@ -16,6 +17,7 @@ useEffect(() => {
         <div>
             
         {listOfPosts.map((value, key) => {
+           // key = value.id
             return(
                 <div className = "post">
                     <div className = "title">
