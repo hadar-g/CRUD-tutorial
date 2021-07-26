@@ -3,6 +3,7 @@ import {Formik, Form, Field, ErrorMessage} from 'formik'
 import './CreatePost.css'
 import * as Yup from 'yup'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 function CreatePost() {
     const initialValues = {
@@ -18,9 +19,11 @@ function CreatePost() {
     })
     const onSubmit = (data) => {
         axios.post("http://localhost:3001/posts", data).then((response) => {
-        console.log("it worked")
+        history.push('/')
     })
     }
+
+    let history = useHistory()
     //initialValues={} onSubmit={} validationSchema={}
     return (
         <div className = "createPostPage"> 
