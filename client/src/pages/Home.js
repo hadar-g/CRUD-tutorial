@@ -15,16 +15,15 @@ useEffect(() => {
     })
 }, [])
 
-
+//  {key = value.id}
     return (
         <div>
-            
+        
         {listOfPosts.map((value, key) => {
-           // key = value.id
             return(
                 <div className = "post" onClick = {() => {
                     history.push(`/post/${value.id}`)}}>
-                        
+                      
                     <div className = "title">
                         {value.title}
                     </div>
@@ -33,8 +32,11 @@ useEffect(() => {
                     </div>
                      <div className = "footer">
                         {value.username}
+                       
                     </div>
+                    
                 </div>
+               
                  ) 
         })}
         </div>

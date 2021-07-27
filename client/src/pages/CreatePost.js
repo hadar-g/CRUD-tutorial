@@ -24,7 +24,7 @@ function CreatePost() {
     }
 
     let history = useHistory()
-    //initialValues={} onSubmit={} validationSchema={}
+    //initialValues={} oCSubmit={} validationSchema={}
     return (
         <div className = "createPostPage"> 
             <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
@@ -32,21 +32,21 @@ function CreatePost() {
                     <label>Title:</label>
                     <ErrorMessage name="title" component="span"/>
                     <Field 
-                        autocomplete ="off"
+                        autoComplete ="off"
                         id="inputCreateTitle" 
                         name ="title" 
                         placeholder="title goes here..."/> 
                     <label>Post Text:</label>
                     <ErrorMessage name="postText" component="span"/>
                     <Field 
-                        autocomplete ="off"
+                        autoComplete ="off"
                         id="inputCreatePost" 
                         name ="postText" 
                         placeholder="Post..."/> 
                     <label>Username:</label>
                     <ErrorMessage name="username" component="span"/>
                     <Field 
-                        autocomplete ="off"
+                        autoComplete ="off"
                         id="inputCreateName" 
                         name ="username" 
                         placeholder="user..."/>
