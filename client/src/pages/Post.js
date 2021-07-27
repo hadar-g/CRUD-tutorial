@@ -24,7 +24,9 @@ function Post() {
         axios.post("http://localhost:3001/comments", 
         {commentBody: newComment , 
         PostId: id}).then((response) => {
-            console.log("comment added!")
+            const commentToAdd = {commentBody: newComment}
+            setComments([...comments, commentToAdd])
+            setNewComment('')
         })
     }
 
@@ -44,6 +46,7 @@ function Post() {
                         type = "text" 
                         placeholder = "Comment..." 
                         autoComplete = "off"
+                        value = {newComment}
                         onChange={(event) =>{setNewComment(event.target.value)}}/>
                     <button onClick = {addComment}>Add Comment</button>
                    
