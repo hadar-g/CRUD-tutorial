@@ -34,7 +34,6 @@ useEffect(() => {
                         {value.username}
                        
                     </div>
-                    
                 </div>
                
                  ) 
